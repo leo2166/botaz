@@ -1,0 +1,28 @@
+# Entornos virtuales
+venv/
+.venv/
+ENV/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Variables de entorno y secretos
+.env
+.env.local
+*.pem
+
+# Archivos de sistema y editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Documentos de trabajo y temporales de Office
+~$*
+*.docx
+*.pdf
