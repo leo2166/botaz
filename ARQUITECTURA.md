@@ -1,37 +1,41 @@
-# PASO 2 — REQUISITOS DE ARQUITECTURA
-Webhook y mensajes:
-- GET /webhook (verificación de Meta) y POST /webhook (mensajes) en FastAPI.
-- Validar la firma X-Hub-Signature-256 con el App Secret en cada POST; rechazar con 403 si no coincide.
-- Responder 200 a Meta de inmediato y enviar la respuesta en segundo plano (BackgroundTasks), con httpx async, timeout y reintentos acotados. Nada de requests bloqueante.
-- Ignorar sin error los webhooks de estado que no se necesiten y los tipos de mensaje no soportados (audio, stickers) con una respuesta cortés.
+# ARQUITECTURA DEL PROYECTO: BotAZ
 
-Base de conocimiento:
-- Archivo JSON o YAML editable por una persona no técnica: palabra clave, sinónimos, texto, imagen, y una marca "prioritaria" para contenido de emergencia.
-- Normalizar la entrada: minúsculas, sin tildes, coincidencia por palabra completa (no por subcadena).
-- Si no hay coincidencia, responder con un menú breve de las palabras clave disponibles (cuenta como mensaje, mantenerlo corto).
-- Imágenes servidas desde una URL pública estable (carpeta estática del propio servicio o equivalente gratuito), optimizadas en tamaño.
+> **PIVOTE ESTRATÉGICO (WhatsApp Web QR Gateway)**:
+> Debido a las restricciones administrativas de Meta (verificación de empresa comercial, cuenta de pago y límites del entorno de prueba), el proyecto pivota hacia una arquitectura desacoplada con **Gateway QR (WhatsApp Web / Baileys)** manteniendo el núcleo inteligente en **Python + FastAPI**.
 
-Contador y corte:
-- Contar con los webhooks de estado "delivered" y su objeto `pricing` (billable / type / subtype), no con envíos propios.
-- Almacenamiento externo gratuito, incremento atómico, reinicio mensual en America/Caracas.
-- Variables configurables: LIMITE_MENSUAL (por defecto 1000) y UMBRAL_CORTE (por defecto 950, para reservar colchón para avisos).
-- Al llegar al umbral: dejar de responder consultas normales y enviar UNA SOLA vez por usuario al mes un aviso con la fecha de restablecimiento y una vía alternativa de contacto. Después, silencio total para ese usuario hasta el nuevo mes.
-- Las palabras clave marcadas como prioritarias (emergencia) pueden seguir respondiendo hasta el límite duro de Meta, si yo lo activo con una variable.
-- Si service_pricing_policy = PAID_EXEMPT, desactivar el corte y dejar solo las alertas.
-- Alertas (a mí, por correo o mensaje) al 70% y al 90% del límite.
-- Los fallos de entrega después del tope son esperados: registrarlos sin reintentar en bucle.
-- Mensaje de aviso sugerido (adaptable): "Lo sentimos. Se alcanzó el cupo de respuestas automáticas de este mes. El servicio se restablece el 1 de [mes siguiente]. Para asuntos urgentes, comuníquese directamente con AJUPTEL Zulia."
+---
 
-Seguridad y privacidad:
-- Secretos solo en variables de entorno (.env local, panel del hosting en producción). Crear .env.example y .gitignore. Nunca secretos en código ni en el repo.
-- Enmascarar los números de teléfono en los logs. No guardar más datos de usuarios que los necesarios para el aviso mensual.
-- Endpoint /health para monitoreo (UptimeRobot) y manejo del arranque en frío del hosting.
+## 1. Componentes del Sistema
 
-# REQUISITOS ADICIONALES (tras revisión del Paso 1)
-- Idempotencia: Meta reintenta webhooks (sobre todo tras el arranque en frío de Render, ~1 minuto). Guardar el ID de cada mensaje entrante (wamid) en Upstash con SET NX y expiración de 24 h, y descartar duplicados. Un reintento NUNCA debe generar una segunda respuesta.
-- Firma X-Hub-Signature-256: calcularla sobre los BYTES CRUDOS del cuerpo (await request.body()), no sobre el JSON ya parseado, y comparar con hmac.compare_digest. Error clásico: validar sobre el JSON re-serializado.
-- Responder 200 a Meta lo antes posible; todo el trabajo pesado va en segundo plano.
-- Imágenes: ≤ 200 KB cada una. El plan Hobby de Render incluye solo 5 GB de salida al mes. Preferible alojarlas en un sitio estático aparte (por ejemplo Vercel) para que la descarga de la imagen no dependa del servidor que se duerme.
-- Keep-alive: endpoint /health y un ping cada 5 minutos con UptimeRobot. Desplegar UN solo servicio en Render (las 750 h son por cuenta, y un mes de 31 días tiene 744 h).
-- Datos corregidos de Upstash: capa gratuita de 500.000 comandos/mes, sin tarjeta. Usar las llamadas REST.
-- Datos corregidos de Render: arranque en frío de aproximadamente un minuto.
+### A. Núcleo Inteligente (FastAPI - Puerto 8000)
+- **Base de Conocimiento**: Archivo `app/knowledge.json` editable por no técnicos (palabra clave, sinónimos, texto de respuesta, URL de imagen y flag de prioridad para emergencias).
+- **Normalización y Búsqueda**: Minúsculas, remoción completa de tildes y diacríticos, coincidencia exacta por palabra completa (`\b`) para evitar falsos positivos por subcadenas.
+- **Idempotencia y Deduplicación**: Almacén con clave por `wamid` / `id` de mensaje con TTL de 24 horas (`SET NX`).
+- **Control de Cupo y Reglas de Negocio**:
+  - Umbral de corte configurable (por defecto 950) y límite mensual (1.000).
+  - Aviso mensual único por usuario tras superar el umbral; posterior silencio para ese usuario hasta el 1 del mes siguiente.
+  - Excepción de emergencias prioritarias permitida tras corte (`PERMITIR_EMERGENCIAS_TRAS_CORTE=true`).
+  - Menú de respaldo conciso ante consultas no reconocidas.
+- **Endpoints FastAPI**:
+  - `GET /health`: Monitoreo y keep-alive.
+  - `GET /qr`: Visualizador web del código QR para vinculación rápida desde navegador.
+  - `GET /gateway/status`: Estado de la conexión de WhatsApp.
+  - `POST /gateway/incoming`: Recepción de eventos desde el conector Baileys.
+  - `POST /webhook` & `GET /webhook`: Compatibilidad dual preservada.
+
+### B. Conector WhatsApp Web (Gateway Baileys - Puerto 3001)
+- Microservicio en Node.js utilizando `@whiskeysockets/baileys` (multi-device WebSocket sin navegador pesado).
+- Generación y refresco del código QR:
+  - Visible en consola/terminal mediante `qrcode-terminal`.
+  - Servido en navegador vía `http://localhost:8000/qr` y `http://localhost:3001/qr`.
+- Almacenamiento persistente de sesión en `gateway/auth_info_baileys/` (no requiere re-escanear tras reiniciar).
+- Reenvío de mensajes entrantes a FastAPI vía HTTP `POST /gateway/incoming`.
+- Endpoint saliente `POST /send` para emisión de texto e imágenes con pie de foto (*caption*).
+
+---
+
+## 2. Ventajas del Pivote
+1. **$0 Presupuesto Real**: Sin necesidad de tarjeta de crédito, facturación en Meta ni riesgo de cobros sorpresivos.
+2. **Cero Burocracia**: Sin exigencias de verificación fiscal, documentos comerciales o aprobación de plantillas por Meta.
+3. **Número Flexible**: Se puede conectar directamente cualquier número móvil regular de WhatsApp mediante vinculación multi-dispositivo.
+4. **Preservación Total del Código**: La base de conocimiento, lógica de normalización, pruebas unitarias y motor de negocio se mantienen al 100%.

@@ -25,6 +25,9 @@ class Settings(BaseSettings):
     PORT: int = 8000
     ALERT_EMAIL: str = ""
 
+    # Gateway WhatsApp Web (QR / Baileys)
+    GATEWAY_URL: str = "http://localhost:3001"
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
