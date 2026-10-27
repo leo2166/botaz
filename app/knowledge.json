@@ -3,7 +3,7 @@
     "id": "bienvenida",
     "title": "Bienvenida y Menú",
     "keywords": ["hola", "buenas", "buenos dias", "buenas tardes", "buenas noches", "menu", "opciones", "ayuda", "inicio", "que puedes hacer", "que haces"],
-    "response_text": "👋 *¡Hola! Bienvenido al asistente informativo de AJUPTEL Zulia.*\n\nEstoy aquí para ayudarte a consultar información rápida sobre tus beneficios y servicios.\n\nEscribe la palabra clave de lo que necesitas o pídemelo con confianza. Por ejemplo:\n• *Emergencia* (o \"dame los números de emergencia\")\n• *Cronograma*\n• *Farmacantv*\n• *Funeraria*\n• *Gestión Humana*\n\n¿Qué información necesitas consultar hoy?",
+    "response_text": "🤖 *¡Hola! Bienvenido, soy BotAZ el asistente de servicios de información de AZ.*\n\nEstoy aquí para dar respuestas a tus consultas de información de interés cantvista.\n\nEscribe la palabra clave de lo que necesitas o pídemelo con confianza. Por ejemplo:\n• *Emergencia* (o \"dame los números de emergencia\")\n• *Cronograma*\n• *Farmacantv*\n• *Funeraria*\n• *Gestión Humana*\n\n¿Qué información necesitas consultar hoy?",
     "image_url": null,
     "is_priority": false
   },
