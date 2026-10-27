@@ -1,0 +1,13 @@
+.git
+.github
+venv/
+node_modules/
+gateway/node_modules/
+gateway/auth_info_baileys/
+auth_info_baileys/
+__pycache__/
+*.pyc
+.env
+archivos_app.zip
+tests/
+MANUAL_BASE_DE_CONOCIMIENTO_BOTAZ.pdf

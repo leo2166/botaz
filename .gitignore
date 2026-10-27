@@ -38,3 +38,6 @@ yarn-error.log*
 auth_info_baileys/
 gateway/auth_info_baileys/
 *.session
+
+# Archivos comprimidos
+*.zip
