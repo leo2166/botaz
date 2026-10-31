@@ -2,7 +2,19 @@
   {
     "id": "bienvenida",
     "title": "Bienvenida y Menú",
-    "keywords": ["hola", "buenas", "buenos dias", "buenas tardes", "buenas noches", "menu", "opciones", "ayuda", "inicio", "que puedes hacer", "que haces"],
+    "keywords": [
+      "hola",
+      "buenas",
+      "buenos dias",
+      "buenas tardes",
+      "buenas noches",
+      "menu",
+      "opciones",
+      "ayuda",
+      "inicio",
+      "que puedes hacer",
+      "que haces"
+    ],
     "response_text": "🤖 *¡Hola! Bienvenido, soy BotAZ el asistente de servicios de información de AZ.*\n\nEstoy aquí para dar respuestas a tus consultas de información de interés cantvista.\n\nEscribe la palabra clave de lo que necesitas o pídemelo con confianza. Por ejemplo:\n• *Emergencia* (o \"dame los números de emergencia\")\n• *Cronograma*\n• *Farmacantv*\n• *Funeraria*\n• *Gestión Humana*\n\n¿Qué información necesitas consultar hoy?",
     "image_url": null,
     "is_priority": false
@@ -10,7 +22,24 @@
   {
     "id": "emergencia",
     "title": "Emergencia Médica y Salud 24h",
-    "keywords": ["emergencia", "emergencias", "urgente", "urgencias", "socorro", "medico", "medica", "ambulancia", "ambulancias", "salud", "clinica", "auxilio", "numero de emergencia", "numeros de emergencia", "telefono de emergencia", "telefonos de emergencia"],
+    "keywords": [
+      "emergencia",
+      "emergencias",
+      "urgente",
+      "urgencias",
+      "socorro",
+      "medico",
+      "medica",
+      "ambulancia",
+      "ambulancias",
+      "salud",
+      "clinica",
+      "auxilio",
+      "numero de emergencia",
+      "numeros de emergencia",
+      "telefono de emergencia",
+      "telefonos de emergencia"
+    ],
     "response_text": "🚨 *Números de Emergencia 24 hrs - Infodoc / CANTV*\n\nPuede ver la guía interactiva completa y marcar directamente en:\n👉 https://tuinfo.vercel.app/emergencias\n\n📞 *Líneas de Atención Inmediata:*\n• *CANTV Emergencias 24h:* 0800-2268892 (0800-CANTVYA) | 0212-5047191 / 5047035 / 5047037\n• *Móvil Directo:* *426 (Movilnet) | 0412-9140633\n• *Coordinación Regional de Salud Zulia:* 0261-7000000\n• *Urgencias y Ambulancias:* 0412-0000000",
     "image_url": null,
     "is_priority": true
@@ -18,7 +47,17 @@
   {
     "id": "carta_aval",
     "title": "Carta Aval Médica",
-    "keywords": ["carta aval", "carta", "aval", "avales", "cirugia", "cirugias", "intervencion", "presupuesto", "patologia"],
+    "keywords": [
+      "carta aval",
+      "carta",
+      "aval",
+      "avales",
+      "cirugia",
+      "cirugias",
+      "intervencion",
+      "presupuesto",
+      "patologia"
+    ],
     "response_text": "📋 *Requisitos para Carta Aval Médica (CANTV)*\n\nEnviar en formato PDF (un solo documento) al correo:\n📧 *cartaavalgss@cantv.com.ve*\n\n*Documentos a digitalizar:*\n1. Informe médico con firma y sello del médico tratante.\n2. Presupuesto detallado.\n3. Estudios paraclínicos con resultados e informe.\n4. Referencia médica.\n*Todos los documentos deben ser legibles y sin enmiendas.*\n\n*Asunto del correo:*\nNombre y apellido del trabajador/jubilado, C.I. y número celular de contacto.\n\n*Cuerpo del mensaje:*\nDatos completos del paciente beneficiario y descripción del caso.\n\n*Nota:* Recibirá un correo con el número de orden de servicio que servirá como acuse de recibo.",
     "image_url": null,
     "is_priority": false
@@ -26,7 +65,21 @@
   {
     "id": "reembolso",
     "title": "Reembolsos por Gastos Médicos",
-    "keywords": ["reembolso", "reembolsos", "factura", "facturas", "gasto", "gastos", "medicamento", "medicamentos", "receta", "seniat", "recetas", "recipe", "recipes"],
+    "keywords": [
+      "reembolso",
+      "reembolsos",
+      "factura",
+      "facturas",
+      "gasto",
+      "gastos",
+      "medicamento",
+      "medicamentos",
+      "receta",
+      "seniat",
+      "recetas",
+      "recipe",
+      "recipes"
+    ],
     "response_text": "💊 *Reembolsos por Gastos Médicos (CANTV)*\n\nEnviar en formato PDF al correo:\n📧 *reembolsogss@cantv.com.ve*\n\n*Recaudos por tipo de concepto:*\n1. *Medicamentos:* Factura SENIAT, informe médico (vigencia máx. 6 meses) y récipe con indicaciones.\n2. *Consultas Médicas:* Factura SENIAT e informe médico que corrobore diagnóstico.\n3. *Procedimientos Quirúrgicos:* Factura SENIAT, informe médico con resultados y desglose de medicamentos e insumos.\n4. *Laboratorio y Estudios:* Factura SENIAT, orden médica con indicación del estudio e informe de resultados.\n\n*Asunto del correo:*\nNombre y apellido del titular, C.I. y teléfono celular de contacto.\n\n*Nota:* Recibirá confirmación con su número de orden de servicio.",
     "image_url": null,
     "is_priority": false
@@ -34,23 +87,65 @@
   {
     "id": "funeraria",
     "title": "Servicios Funerarios El Rosal",
-    "keywords": ["servicio funerario", "servicios funerarios", "servicio funebre", "servicios funebres", "funeraria", "funerario", "funerarios", "funeraria el rosal", "el rosal", "rosal", "fallecimiento", "fallecido", "defuncion", "cremacion", "capilla", "sepelio", "ataud", "atad", "carroza", "velorio", "entierro"],
+    "keywords": [
+      "servicio funerario",
+      "servicios funerarios",
+      "servicio funebre",
+      "servicios funebres",
+      "funeraria",
+      "funerario",
+      "funerarios",
+      "funeraria el rosal",
+      "el rosal",
+      "rosal",
+      "fallecimiento",
+      "fallecido",
+      "defuncion",
+      "cremacion",
+      "capilla",
+      "sepelio",
+      "ataud",
+      "atad",
+      "carroza",
+      "velorio",
+      "entierro"
+    ],
     "response_text": "🕊️ *Servicios Funerarios El Rosal (CANTV)*\n\nPuede ver la información completa y cobertura en:\n👉 https://tuinfo.vercel.app/servicios-funerarios\n\nAtención nacional 24 horas, los 365 días del año.\n📞 *Teléfonos de guardia:*\n• (0212) 762-4642 / 762-3657 / 762-4330\n• 0426-7122959\n• 0424-2428704\n\n*Cobertura del Grupo Familiar:*\nTitular, cónyuge/concubino(a), padres, hijos e hijas (todos sin límite de edad).\n\n*Servicios incluidos:*\n• Ataúd básico y capilla de velación estándar con cafetería.\n• Habitación de descanso para familiares.\n• Preparación, traslados locales y carroza fúnebre.\n• Opción de sustitución de cementerio por servicio de cremación.",
     "image_url": null,
     "is_priority": false
   },
   {
     "id": "farmacantv",
-    "title": "FarmaCANTV Región Occidente",
-    "keywords": ["farmacantv", "farmacia", "farma", "tratamiento", "tratamientos", "insumo", "insumos", "cronico", "cronicos", "permanente", "permanentes"],
-    "response_text": "💊 *FarmaCANTV - Región Occidente*\n\nPara tramitar medicamentos de tratamientos permanentes o crónicos:\n📧 *farmacantv.regionoccidente@gmail.com*\n\n*Requisitos a consignar (digitalizados en PDF):*\n• Informe médico actualizado.\n• Récipe médico vigente (RP) con indicaciones precisas.\n• Datos personales: Estado, Nombre completo, C.I. y número de contacto.\n\n_Mantenga sus recaudos al día ante cada cambio de tratamiento._",
+    "title": "FarmaCANTV Todas las Regiones",
+    "keywords": [
+      "farmacantv",
+      "farmacia",
+      "farma",
+      "tratamiento",
+      "tratamientos",
+      "insumo",
+      "insumos",
+      "cronico",
+      "cronicos",
+      "permanente",
+      "permanentes"
+    ],
+    "response_text": "💊 *FarmaCANTV - Todas las Regiones*\n👉 https://tuinfo.vercel.app/informacion/salud/farmacantv\n\nPara tramitar medicamentos de tratamientos permanentes o crónicos:\n\n*Requisitos a consignar (digitalizados en PDF):*\n• Informe médico actualizado.\n• Récipe médico vigente (RP) con indicaciones precisas.\n• Datos personales: Estado, Nombre completo, C.I. y número de contacto.\n\n_Mantenga sus recaudos al día ante cada cambio de tratamiento._",
     "image_url": null,
     "is_priority": false
   },
   {
     "id": "distribucion_nomina",
     "title": "Distribución de la Nómina",
-    "keywords": ["distribucion de la nomina", "distribucion de nomina", "distribucion", "distribucion nomina", "bono vital", "bono alimentario", "bonos"],
+    "keywords": [
+      "distribucion de la nomina",
+      "distribucion de nomina",
+      "distribucion",
+      "distribucion nomina",
+      "bono vital",
+      "bono alimentario",
+      "bonos"
+    ],
     "response_text": "📊 *Distribución de la Nómina - Jubilados CANTV*\n\n• *Pensión Cantv:*\n  - 571.20 Bs Mensual (285,60 Bs quincenal).\n  - _Nota:_ Se cancela quincenal; la primera quincena tiene una bonificación de 500 Bs de ayuda.\n\n• *Bono Alimentario:*\n  - 68 $ Mensuales.\n  - _Nota:_ Se cancela generalmente la primera semana de cada mes.\n\n• *Bono Vital:*\n  - 150 $ Mensuales.\n  - _Nota:_ Se cancela generalmente la tercera semana de cada mes.\n\n_Para consultar el calendario y fechas de pago, escriba *cronograma* o visite: https://tuinfo.vercel.app/nomina_",
     "image_url": null,
     "is_priority": false
@@ -58,7 +153,21 @@
   {
     "id": "cronograma",
     "title": "Cronograma de Pagos y Nómina",
-    "keywords": ["cronograma", "pagos", "pago", "nomina", "calendario", "fechas", "cuando pagan", "cuando cobro", "cobro", "sueldo", "salario", "quincena", "deposito"],
+    "keywords": [
+      "cronograma",
+      "pagos",
+      "pago",
+      "nomina",
+      "calendario",
+      "fechas",
+      "cuando pagan",
+      "cuando cobro",
+      "cobro",
+      "sueldo",
+      "salario",
+      "quincena",
+      "deposito"
+    ],
     "response_text": "🗓️ *Cronograma de Pagos y Nómina CANTV*\n\nPuede consultar el cronograma oficial de pagos y la nómina completa en:\n👉 https://tuinfo.vercel.app/nomina\n\n_Para consultar el detalle de montos y bonos, escriba: *distribución de la nómina*._",
     "image_url": null,
     "is_priority": false
@@ -66,7 +175,18 @@
   {
     "id": "directorio_ajuptel",
     "title": "Directorio AJUPTEL Zulia",
-    "keywords": ["directorio", "asociacion", "ajuptel", "directiva", "sede", "horario", "oficina", "telefono ajuptel", "directorio ajuptel", "contacto ajuptel"],
+    "keywords": [
+      "directorio",
+      "asociacion",
+      "ajuptel",
+      "directiva",
+      "sede",
+      "horario",
+      "oficina",
+      "telefono ajuptel",
+      "directorio ajuptel",
+      "contacto ajuptel"
+    ],
     "response_text": "👥 *Asociación de Jubilados y Pensionados CANTV Zulia (AJUPTEL)*\n\n📍 *Atención en Sede:*\nLunes a viernes de 8:30 AM a 1:00 PM.\n\n📞 *Contactos de la Junta Directiva:*\n• Euclides Díaz: 0416-6687944\n• Mercedes Luengo: 0414-6497888\n• Tibisay Castellanos: 0424-6830116\n• Olga Infante: 0414-6392742",
     "image_url": null,
     "is_priority": false
@@ -74,7 +194,14 @@
   {
     "id": "gestion_humana",
     "title": "Gestión Humana CANTV Zulia",
-    "keywords": ["gestion humana", "recursos humanos", "rrhh", "analista", "consultor", "consultores"],
+    "keywords": [
+      "gestion humana",
+      "recursos humanos",
+      "rrhh",
+      "analista",
+      "consultor",
+      "consultores"
+    ],
     "response_text": "🏢 *Gestión Humana CANTV (Región Zulia)*\n\n📍 *Oficina y Contactos:*\n• Teléfono sede: 0261-7875364\n• María de Los Ángeles: 0412-7517812 | murda3@cantv.com.ve\n• Gilberto Marcano: 0416-5607336 | gmarca04@cantv.com.ve\n• Lisdeth Carruyo: 0416-5670404 | lcarru01@cantv.com.ve",
     "image_url": null,
     "is_priority": false
@@ -82,7 +209,12 @@
   {
     "id": "atencion_al_jubilado",
     "title": "Atención al Jubilado CANTV",
-    "keywords": ["atencion al jubilado", "atencion jubilado", "jubilados central", "nivel central"],
+    "keywords": [
+      "atencion al jubilado",
+      "atencion jubilado",
+      "jubilados central",
+      "nivel central"
+    ],
     "response_text": "🏛️ *Atención al Jubilado CANTV (Nivel Central)*\n\n• Armando Parodi: 0212-5006282 | aparodo1@cantv.com.ve\n• Efrén Boada: 0212-5004067 | eboada01@cantv.com.ve\n• Noemí Chacón: 0212-4512810 | nchaco01@cantv.com.ve\n• Horacio Méndez: 0212-5004572 | hmendez01@cantv.com.ve\n• Yoilet Molina: 0212-5006965 | ymolino4@cantv.com.ve\n• Yesenia Parra: yparra07@cantv.com.ve",
     "image_url": null,
     "is_priority": false
@@ -90,7 +222,20 @@
   {
     "id": "cantv",
     "title": "CANTV y Averías",
-    "keywords": ["cantv", "linea", "lineas", "averia", "averias", "telefono", "telefonos", "aba", "falla", "fallas", "internet", "reporte"],
+    "keywords": [
+      "cantv",
+      "linea",
+      "lineas",
+      "averia",
+      "averias",
+      "telefono",
+      "telefonos",
+      "aba",
+      "falla",
+      "fallas",
+      "internet",
+      "reporte"
+    ],
     "response_text": "🔧 *Reporte de Averías CANTV y ABA*\n\nPara reportar averías en telefonía fija o servicio de Internet ABA:\n• Vía telefónica nacional: *0800-ANTV-00* (0800-2688-00)\n• Portal web oficial: www.cantv.com.ve (asistente Cati)\n• O canalice su requerimiento a través de la secretaría de *AJUPTEL Zulia*.",
     "image_url": "https://raw.githubusercontent.com/leo2166/cumpleAZ/main/public/images/cantv_info.png",
     "is_priority": false
@@ -98,7 +243,16 @@
   {
     "id": "ia",
     "title": "Chat de Inteligencia Artificial",
-    "keywords": ["ia", "inteligencia artificial", "chat", "chat ia", "deepseek", "asistente ia", "robot", "inteligencia"],
+    "keywords": [
+      "ia",
+      "inteligencia artificial",
+      "chat",
+      "chat ia",
+      "deepseek",
+      "asistente ia",
+      "robot",
+      "inteligencia"
+    ],
     "response_text": "🤖 *Chat de Inteligencia Artificial (InfoDoc)*\n\nPuede consultar directamente con nuestro asistente de Inteligencia Artificial en el siguiente enlace:\n👉 https://tuinfo.vercel.app/chat-deepseek",
     "image_url": null,
     "is_priority": false
@@ -106,7 +260,21 @@
   {
     "id": "noticias_tasas",
     "title": "Noticias y Tasas",
-    "keywords": ["noticias", "noticia", "titulares", "tasas", "tasa", "dolar", "dolar bcv", "bcv", "banco central", "euro", "cambio", "divisas", "cotizacion"],
+    "keywords": [
+      "noticias",
+      "noticia",
+      "titulares",
+      "tasas",
+      "tasa",
+      "dolar",
+      "dolar bcv",
+      "bcv",
+      "banco central",
+      "euro",
+      "cambio",
+      "divisas",
+      "cotizacion"
+    ],
     "response_text": "📰 *Noticias y Tasas de Cambio*\n\n• *Boletín Informativo y Noticias:*\n  Consulte los titulares y resúmenes de prensa en:\n  👉 https://leo2166.github.io/news-scraper/\n\n• *Banco Central de Venezuela (BCV):*\n  Consulte las tasas de cambio y cotizaciones oficiales en:\n  👉 https://www.bcv.org.ve/",
     "image_url": null,
     "is_priority": false
@@ -114,7 +282,13 @@
   {
     "id": "autorizacion_bolsa",
     "title": "Formato Bolsa de Alimentación",
-    "keywords": ["bolsa", "bolsa de alimentacion", "formato bolsa de alimentacion", "formato bolsa", "autorizacion bolsa"],
+    "keywords": [
+      "bolsa",
+      "bolsa de alimentacion",
+      "formato bolsa de alimentacion",
+      "formato bolsa",
+      "autorizacion bolsa"
+    ],
     "response_text": "📦 *Formato de Autorización - Bolsa de Alimentación*\n\nPuede descargar o completar en línea el formato de autorización para el retiro de la bolsa de alimentación aquí:\n👉 https://tuinfo.vercel.app/documentos/autorizacion-bolsa",
     "image_url": null,
     "is_priority": false
@@ -122,7 +296,14 @@
   {
     "id": "cumpleanos",
     "title": "Libreta de Cumpleaños",
-    "keywords": ["cumpleanos", "cumpleaneros", "cumpleaneros del mes", "cumpleano", "cumple", "felicitaciones"],
+    "keywords": [
+      "cumpleanos",
+      "cumpleaneros",
+      "cumpleaneros del mes",
+      "cumpleano",
+      "cumple",
+      "felicitaciones"
+    ],
     "response_text": "🎂 *Libreta de Cumpleaños - AJUPTEL Zulia*\n\nConsulte los cumpleañeros del mes y genere tarjetas de felicitación personalizadas en:\n👉 https://cumpleaz.vercel.app/",
     "image_url": null,
     "is_priority": false
