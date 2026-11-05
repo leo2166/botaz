@@ -274,8 +274,9 @@ def build_pdf():
         ),
         "farmacantv": (
             "<b>¿Qué actualizar aquí?</b><br/>"
-            "• Si cambia el correo electrónico de FarmaCANTV Occidente (<code>farmacantv.regionoccidente@gmail.com</code>).<br/>"
-            "• Si abren entrega presencial en Maracaibo o cambian los recaudos periódicos."
+            "• Si cambia el enlace de la página web de FarmaCANTV (<code>tuinfo.vercel.app/informacion/salud/farmacantv</code>).<br/>"
+            "• Si se agregan o modifican los correos por región disponibles en esa página.<br/>"
+            "• Si cambian los recaudos periódicos o se abre entrega presencial en Maracaibo."
         ),
         "pago": (
             "<b>¿Qué actualizar aquí?</b><br/>"

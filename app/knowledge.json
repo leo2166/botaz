@@ -307,5 +307,16 @@
     "response_text": "🎂 *Libreta de Cumpleaños - AJUPTEL Zulia*\n\nConsulte los cumpleañeros del mes y genere tarjetas de felicitación personalizadas en:\n👉 https://cumpleaz.vercel.app/",
     "image_url": null,
     "is_priority": false
+  },
+  {
+    "id": "infodoc",
+    "title": "Portal InfoDoc",
+    "keywords": [
+      "infodoc",
+      "portal"
+    ],
+    "response_text": "🌐 *InfoDoc — Portal Informativo CANTV*\n\nEl portal oficial de información y autogestión para jubilados y pensionados de CANTV. Consulta nóminas, emergencias, servicios funerarios, noticias, tasas y mucho más, disponible 24/7:\n👉 https://tuinfo.vercel.app/",
+    "image_url": null,
+    "is_priority": false
   }
 ]

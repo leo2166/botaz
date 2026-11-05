@@ -1,8 +1,8 @@
 # PROGRESO DEL PROYECTO: BotAZ (WhatsApp Bot)
 
 > **ESTADO DEL PROYECTO: PRODUCCIÓN ACTIVA EN LA NUBE**  
-> **Fecha y Hora:** 2026-10-27 08:04 (America/Caracas)  
-> **Estado:** Fases A, B, C, D y E completadas al 100%. Desplegado en producción en **Render.com** (`https://botaz.onrender.com`). Saludo de bienvenida actualizado con identidad BotAZ (🤖).
+> **Fecha y Hora:** 2026-10-31 04:48 (America/Caracas)  
+> **Estado:** Fases A, B, C, D y E completadas al 100%. Desplegado en producción en **Render.com** (`https://botaz.onrender.com`). **Base de conocimiento actualizada a 17 temas activos.** Pendiente push a medianoche + escaneo QR.
 
 ---
 
@@ -18,7 +18,7 @@
 
 ## 2. Estado de Fases
 - [x] **Fase A (Estructura y Configuración)**: Venv en PowerShell, dependencias FastAPI, Pydantic Settings, `.env` y seguridad gitignore.
-- [x] **Fase B (Base de Conocimiento y Webhooks)**: Normalización de texto sin tildes, minúsculas y strip en `bot_service.py`, expresiones regulares de palabra completa (`\b`), prioridad para emergencias médicas (`tuinfo.vercel.app/emergencias`), bienvenida/menú inicial personalizado y mensaje de respaldo. **Base de conocimiento afinada (16 temas activos)**.
+- [x] **Fase B (Base de Conocimiento y Webhooks)**: Normalización de texto sin tildes, minúsculas y strip en `bot_service.py`, expresiones regulares de palabra completa (`\b`), prioridad para emergencias médicas (`tuinfo.vercel.app/emergencias`), bienvenida/menú inicial personalizado y mensaje de respaldo. **Base de conocimiento actualizada a 17 temas activos**.
 - [x] **Fase C (Reglas de Negocio e Idempotencia)**: Deduplicación con TTL de 24 horas, contador de mensajes entregados, umbral de corte (950 mensajes) con aviso único mensual y excepción de emergencias.
 - [x] **Fase D (Pivote y Conector Gateway QR)**: Microservicio en `gateway/server.js`, adaptador `app/whatsapp_adapter.py`, endpoints en FastAPI y batería de 30 pruebas aprobadas (100%).
 - [x] **Fase E (Despliegue y Producción en Render)**:
@@ -57,4 +57,13 @@ git add app/knowledge.json
 git commit -m "update: actualización de base de conocimiento"
 git push origin main
 ```
-Render detectará el cambio en GitHub y desplegará la actualización en menos de 1 minuto sin perder la sesión de WhatsApp.
+Render detectará el cambio en GitHub y desplegará la actualización automáticamente.
+> ⚠️ **IMPORTANTE:** Cada deploy reinicia el servicio y pierde la sesión WhatsApp. Escanear QR en https://botaz.onrender.com/qr inmediatamente después del deploy.
+
+---
+
+## 4. Cambios Recientes (2026-10-31)
+- **Tema #6 FarmaCANTV**: Actualizado de “Región Occidente” a “Todas las Regiones”. Se eliminó el correo regional y se agregó enlace al portal: https://tuinfo.vercel.app/informacion/salud/farmacantv.
+- **Tema #17 InfoDoc (NUEVO)**: Palabras clave infodoc, portal. Enlace al portal principal: https://tuinfo.vercel.app/.
+- **Manual PDF**: Regenerado con todos los cambios (MANUAL_BASE_DE_CONOCIMIENTO_BOTAZ.pdf).
+- **Push pendiente**: Cambios locales listos. Push programado cerca de medianoche + escaneo QR.
