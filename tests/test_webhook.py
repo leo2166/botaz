@@ -11,10 +11,22 @@ from app.security import mask_phone_number, verify_hub_signature
 client = TestClient(app)
 
 
-def test_health_endpoint():
+def test_health_endpoint(monkeypatch):
+    # Caso 1: Gateway desconectado -> responde 503
     response = client.get("/health")
-    assert response.status_code == 200
-    assert response.json() == {"status": "ok"}
+    assert response.status_code == 503
+    assert response.json()["status"] == "disconnected"
+
+    # Caso 2: Gateway conectado -> responde 200 OK
+    async def mock_connected():
+        return {"status": "connected", "user": "test_user"}
+
+    from app.whatsapp_adapter import whatsapp_adapter
+    monkeypatch.setattr(whatsapp_adapter, "get_status", mock_connected)
+
+    res_ok = client.get("/health")
+    assert res_ok.status_code == 200
+    assert res_ok.json()["status"] == "ok"
 
 
 def test_webhook_get_verification_success():

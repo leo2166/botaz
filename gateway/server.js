@@ -27,6 +27,15 @@ let connectedUser = null;
 // Logger silencioso para Baileys para no saturar la consola
 const logger = pino({ level: 'silent' });
 
+// Manejadores globales anti-caídas (red, sockets, timeouts)
+process.on('uncaughtException', (err) => {
+  console.error('[Gateway] Excepción no capturada (controlada):', err?.message || err);
+});
+
+process.on('unhandledRejection', (reason) => {
+  console.error('[Gateway] Promesa rechazada no manejada (controlada):', reason?.message || reason);
+});
+
 async function connectToWhatsApp() {
   const { state, saveCreds } = await useMultiFileAuthState(AUTH_DIR);
   const { version } = await fetchLatestBaileysVersion();

@@ -22,9 +22,21 @@ app = FastAPI(
 
 
 @app.get("/health", tags=["Monitoreo"])
-async def health_check():
-    """Endpoint de salud para monitoreo externo (UptimeRobot) y keep-alive."""
-    return {"status": "ok"}
+async def health_check(response: Response):
+    """
+    Endpoint de salud para monitoreo externo (UptimeRobot) y keep-alive.
+    Verifica también el estado del gateway WhatsApp.
+    Si el gateway no está conectado, devuelve status 503 para que UptimeRobot
+    dispare inmediatamente la alarma al correo del administrador.
+    """
+    gw_info = await whatsapp_adapter.get_status()
+    gw_status = gw_info.get("status")
+
+    if gw_status == "connected":
+        return {"status": "ok", "gateway": gw_info}
+
+    response.status_code = 503
+    return {"status": "disconnected", "gateway": gw_info}
 
 
 @app.get("/webhook", tags=["Meta Webhook"])
