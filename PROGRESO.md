@@ -1,8 +1,8 @@
 # PROGRESO DEL PROYECTO: BotAZ (WhatsApp Bot)
 
 > **ESTADO DEL PROYECTO: PRODUCCIÓN ACTIVA EN LA NUBE**  
-> **Fecha y Hora:** 2026-10-31 04:48 (America/Caracas)  
-> **Estado:** Fases A, B, C, D y E completadas al 100%. Desplegado en producción en **Render.com** (`https://botaz.onrender.com`). **Base de conocimiento actualizada a 17 temas activos.** Pendiente push a medianoche + escaneo QR.
+> **Fecha y Hora:** 2026-11-07 09:28 (America/Caracas)  
+> **Estado:** Fases A, B, C, D y E completadas al 100%. Desplegado en producción en **Render.com** (`https://botaz.onrender.com`). **Base de conocimiento actualizada a 17 temas activos.** Servicio activo y 100% operativo en producción.
 
 ---
 
@@ -66,4 +66,15 @@ Render detectará el cambio en GitHub y desplegará la actualización automátic
 - **Tema #6 FarmaCANTV**: Actualizado de “Región Occidente” a “Todas las Regiones”. Se eliminó el correo regional y se agregó enlace al portal: https://tuinfo.vercel.app/informacion/salud/farmacantv.
 - **Tema #17 InfoDoc (NUEVO)**: Palabras clave infodoc, portal. Enlace al portal principal: https://tuinfo.vercel.app/.
 - **Manual PDF**: Regenerado con todos los cambios (MANUAL_BASE_DE_CONOCIMIENTO_BOTAZ.pdf).
-- **Push pendiente**: Cambios locales listos. Push programado cerca de medianoche + escaneo QR.
+- **Despliegue y Vinculación Completada (2026-11-05)**: Push realizado exitosamente a main. Deploy en Render finalizado y código QR escaneado/vinculado con éxito.
+
+- **Blindaje y Resiliencia (2026-11-06)**:
+  - Auto-recuperación en bucle permanente en start.sh (reinicio automático de Gateway en 2s ante fallos).
+  - Interceptores de excepciones globales en gateway/server.js (uncaughtException, unhandledRejection).
+  - Sincronización del endpoint /health con el estado de WhatsApp (devuelve HTTP 503 ante desconexión para activar alertas de UptimeRobot).
+  - Suite de 30 tests aprobada al 100%. Desplegado en Render.
+
+- **Nuevo Menú Visual Gráfico (2026-11-07)**:
+  - Optimización de la lámina diseñada por el usuario (menudelbot.jpg, de 8.5MB a 399KB).
+  - Configuración del tema ienvenida con saludo corto y la imagen adjunta.
+  - Subida a producción en Render.

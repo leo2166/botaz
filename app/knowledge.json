@@ -15,8 +15,8 @@
       "que puedes hacer",
       "que haces"
     ],
-    "response_text": "🤖 *¡Hola! Bienvenido, soy BotAZ el asistente de servicios de información de AZ.*\n\nEstoy aquí para dar respuestas a tus consultas de información de interés cantvista.\n\nEscribe la palabra clave de lo que necesitas o pídemelo con confianza. Por ejemplo:\n• *Emergencia* (o \"dame los números de emergencia\")\n• *Cronograma*\n• *Farmacantv*\n• *Funeraria*\n• *Gestión Humana*\n\n¿Qué información necesitas consultar hoy?",
-    "image_url": null,
+    "response_text": "🤖 *¡Hola! Bienvenido, soy BotAZ el asistente de servicios de información de AZ.*\n\nEscribe la palabra clave de la opción que necesitas consultar:",
+    "image_url": "https://raw.githubusercontent.com/leo2166/botaz/main/menudelbot.jpg",
     "is_priority": false
   },
   {
