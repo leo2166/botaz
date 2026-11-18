@@ -318,5 +318,20 @@
     "response_text": "🌐 *InfoDoc — Portal Informativo CANTV*\n\nEl portal oficial de información y autogestión para jubilados y pensionados de CANTV. Consulta nóminas, emergencias, servicios funerarios, noticias, tasas y mucho más, disponible 24/7:\n👉 https://tuinfo.vercel.app/",
     "image_url": null,
     "is_priority": false
+  },
+  {
+    "id": "reglamento_adultos_mayores",
+    "title": "Reglamento Ley Orgánica Personas Adultas Mayores",
+    "keywords": [
+      "g7090",
+      "reglamento",
+      "ley organica",
+      "adultos mayores",
+      "personas mayores",
+      "ley adultos"
+    ],
+    "response_text": "📋 *Reglamento de la Ley Orgánica para la Atención y Desarrollo Integral de las Personas Adultas Mayores*\n\nConsulta el reglamento completo en:\n👉 https://tuinfo.vercel.app/construccion",
+    "image_url": "",
+    "is_priority": false
   }
 ]
